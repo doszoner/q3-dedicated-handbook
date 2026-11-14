@@ -1,0 +1,42 @@
+# Quake III Arena (ioquake3), Free For All, UDP-порт 27960. Как запустить: start.md.
+# После правки этого файла, autoexec.cfg или maplist.txt примените изменения:
+#   docker compose up -d --force-recreate q3ded
+name: q3ded-stock
+
+services:
+  q3ded:
+    # Образ указан по digest (идентификатору содержимого), его тег: 20261112-d608e3a-stock
+    image: ghcr.io/doszoner/q3ded@sha256:4461a135fde82ddf4d8695bd9362ed1981e9bc3b9092081ac77e8ca7f5582294
+    restart: unless-stopped
+    stop_grace_period: 20s
+    stdin_open: true
+    tty: true
+    cap_drop: [ALL]
+    security_opt: [no-new-privileges:true]
+    logging: { driver: json-file, options: { max-size: 10m, max-file: "3" } }
+    ports:
+      - "27960:27960/udp"
+    environment:
+      # Для лобби и браузерных игроков dos.zone.
+      NET_PEER_SERVER: wss://net.js-dos.com:444
+      # Имя комнаты: замените yourserver своим именем (латиница, цифры, знаки . _ -), не заканчивайте имя на p.
+      NET_SERVER_NAME: room.q3ded.yourserver-stock-ffa
+      # Название сервера в лобби и в списках серверов.
+      HOSTNAME: "Q3 FFA"
+      # Режим: ffa | duel | tdm | ctf
+      MODE: ffa
+      # Лимит игроков: 2-26
+      MAXCLIENTS: "12"
+      # Принимать обычных клиентов Quake III по UDP на PORT.
+      NATIVE_UDP: "1"
+      # Должен совпадать с числом по обе стороны в ports выше.
+      PORT: "27960"
+    volumes:
+      - run:/data/run
+      - home:/data/home
+      - ./maplist.txt:/data/maplist.txt:ro
+      - ./autoexec.cfg:/opt/q3-data/demoq3/autoexec.cfg:ro
+
+volumes:
+  run: {}
+  home: {}

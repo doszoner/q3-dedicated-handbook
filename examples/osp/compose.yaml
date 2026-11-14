@@ -1,0 +1,40 @@
+# OSP 1.03a, Free For All, UDP-порт 27960. Как запустить: start.md.
+# Файла maplist.txt здесь нет: entrypoint OSP его не читает. Сервер стартует на карте по умолчанию для MODE.
+# После правки этого файла или autoexec.cfg примените изменения:
+#   docker compose up -d --force-recreate q3ded
+name: q3ded-osp
+
+services:
+  q3ded:
+    # Образ указан по digest (идентификатору содержимого), его тег: 20261114-9e899840-osp
+    image: ghcr.io/doszoner/q3ded@sha256:ba1c045a2cdac33bffd53279c3dcf8105115fe1ba50a64c6e0ea4a3dd95377c3
+    restart: unless-stopped
+    stop_grace_period: 20s
+    stdin_open: true
+    tty: true
+    cap_drop: [ALL]
+    security_opt: [no-new-privileges:true]
+    logging: { driver: json-file, options: { max-size: 10m, max-file: "3" } }
+    ports:
+      - "27960:27960/udp"
+    environment:
+      # Для лобби dos.zone.
+      NET_PEER_SERVER: wss://net.js-dos.com:444
+      # Имя комнаты: замените yourserver своим именем (латиница, цифры, знаки . _ -), не заканчивайте имя на p.
+      NET_SERVER_NAME: room.q3ded.yourserver-osp-ffa
+      # Название сервера в лобби и в списках серверов.
+      HOSTNAME: "OSP FFA"
+      # Режим: duel | ffa | tdm | ctf | ca | ftag. Лимит игроков всегда 14, лимиты матча берутся из режима OSP.
+      MODE: ffa
+      # Принимать обычных клиентов Quake III по UDP на PORT.
+      NATIVE_UDP: "1"
+      # Должен совпадать с числом по обе стороны в ports выше.
+      PORT: "27960"
+    volumes:
+      - run:/data/run
+      - home:/data/home
+      - ./autoexec.cfg:/opt/q3-data/osp/autoexec.cfg:ro
+
+volumes:
+  run: {}
+  home: {}

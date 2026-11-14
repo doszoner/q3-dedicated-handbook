@@ -1,0 +1,20 @@
+ospctf1 00 20 -1 -1 20 -1
+ospctf2 00 20 -1 -1 20 -1
+
+deletemap ospca1
+deletemap ospdm1
+deletemap ospdm10
+deletemap ospdm11
+deletemap ospdm12
+deletemap ospdm2
+deletemap ospdm3
+deletemap ospdm4
+deletemap ospdm5
+deletemap ospdm6
+deletemap ospdm7
+deletemap ospdm8
+deletemap ospdm9
+deletemap pro-q3dm13
+deletemap pro-q3dm6
+deletemap pro-q3tourney2
+deletemap pro-q3tourney4

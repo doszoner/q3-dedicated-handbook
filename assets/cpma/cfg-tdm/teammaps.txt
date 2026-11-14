@@ -1,0 +1,116 @@
+cpm21
+cpm4a
+cpm18r
+cpm26
+cpm27
+cpm14
+cpm20
+cpm9
+cpm6	0	4
+cpm11	0	4
+cpm16	0	4
+cpm19	0	4
+cpm25	0	4
+cpm28	0	4
+cpm29	0	4
+cpm4	99
+cpm13	99
+cpm18	99
+cpm1a 99 99
+cpm24 99 99
+cpm23 99 99
+cpm22 99 99
+cpm3a 99 99
+cpm17 99 99
+cpm15 99 99
+cpm12 99 99
+cpm11a 99 99
+cpm10 99 99
+cpm8 99 99
+cpm7 99 99
+cpm5 99 99
+cpm2 99 99
+pro-q3dm6 99 99
+pro-q3dm13 99 99
+pro-q3tourney2 99 99
+pro-q3tourney4 99 99
+pro-q3tourney7 99 99
+hub3aeroq3 99 99
+q3dm1 99 99
+q3dm13 99 99
+q3tourney2 99 99
+q3tourney3 99 99
+q3tourney6 99 99
+ztn3tourney1 99 99
+bloodcovenant 99 99
+moltencliffs 99 99
+hub3tourney1 99 99
+q3dm17 99 99
+q3dm6 99 99
+q3dm7 99 99
+ospdm5a 99 99
+overkill 99 99
+ospdm6 99 99
+pro-nodm9 99 99
+asylum 99 99
+hiddenfortress 99 99
+dm3 99 99
+q3dmp14 99 99
+padcrash 99 99
+padcrash_dm17 99 99
+padcrash_ctf 99 99
+tikidm4 99 99
+aerowalk 99 99
+almostlost 99 99
+battleforged 99 99
+beyondreality 99 99
+bloodrun 99 99
+bloodrunintel 99 99
+brimstoneabbey 99 99
+campgrounds 99 99
+campgroundsinte 99 99
+cannedheat 99 99
+chemicalreac 99 99
+cliffside 99 99
+cure 99 99
+deadandgone 99 99
+deepinside 99 99
+delirium 99 99
+demonkeep 99 99
+devilish 99 99
+dismemberment 99 99
+dreadfulplace 99 99
+dredwerkz 99 99
+eviscerated 99 99
+evolution 99 99
+furiousheights 99 99
+grimdungeons 99 99
+hearth 99 99
+hektik_ql 99 99
+hellsgateredux 99 99
+heroskeep 99 99
+houseofdecay 99 99
+intervention 99 99
+leviathan 99 99
+limbus 99 99
+longestyard 99 99
+lostworld 99 99
+purgatory 99 99
+quarantine 99 99
+realmofsteelrat 99 99
+silence 99 99
+sinister 99 99
+spacechamber 99 99
+theedge 99 99
+threestory 99 99
+tornado 99 99
+toxicity 99 99
+trinity 99 99
+verticalvengean 99 99
+wicked 99 99
+wintersedge 99 99
+ospdm1 99 99
+ospdm8 99 99
+ospdm11 99 99
+ospdm12 99 99
+teddm1 99 99

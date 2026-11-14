@@ -1,0 +1,42 @@
+# CPMA 1.53, Free For All, UDP-порт 27960. Как запустить: start.md.
+# После правки этого файла, autoexec.cfg или maplist.txt примените изменения:
+#   docker compose up -d --force-recreate q3ded
+name: q3ded-cpma
+
+services:
+  q3ded:
+    # Образ указан по digest (идентификатору содержимого), его тег: 20261112-c64186e-cpma
+    image: ghcr.io/doszoner/q3ded@sha256:09f9c028b925395296a4b7f0ee84d08f43268c6ec99726c797e675213f0f58d3
+    restart: unless-stopped
+    stop_grace_period: 20s
+    stdin_open: true
+    tty: true
+    cap_drop: [ALL]
+    security_opt: [no-new-privileges:true]
+    logging: { driver: json-file, options: { max-size: 10m, max-file: "3" } }
+    ports:
+      - "27960:27960/udp"
+    environment:
+      # Для лобби и браузерных игроков dos.zone. Без этой строки CPMA не стартует.
+      NET_PEER_SERVER: wss://net.js-dos.com:444
+      # Имя комнаты: замените yourserver своим именем (латиница, цифры, знаки . _ -), не заканчивайте имя на p.
+      NET_SERVER_NAME: room.q3ded.yourserver-cpma-ffa
+      # Название сервера в лобби и в списках серверов.
+      HOSTNAME: "CPMA FFA"
+      # Режим: duel | ffa | tdm | ctf | ca | ftag | ctfs. Лимиты берутся из режима CPMA.
+      MODE: ffa
+      # Лимит игроков: 2-26 (в duel только 20)
+      MAXCLIENTS: "12"
+      # Принимать обычных клиентов Quake III по UDP на PORT.
+      NATIVE_UDP: "1"
+      # Должен совпадать с числом по обе стороны в ports выше.
+      PORT: "27960"
+    volumes:
+      - run:/data/run
+      - home:/data/home
+      - ./maplist.txt:/data/maplist.txt:ro
+      - ./autoexec.cfg:/opt/q3-data/cpma/autoexec.cfg:ro
+
+volumes:
+  run: {}
+  home: {}

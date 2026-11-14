@@ -1,0 +1,20 @@
+ospdm1 00 20 -1 -1 20 -1 0
+ospdm2 00 20 -1 -1 20 -1 0
+ospdm4 00 20 -1 -1 20 -1 0
+ospdm5 00 20 -1 -1 20 -1 0
+ospdm6 00 20 -1 -1 20 -1 0
+ospdm9 00 20 -1 -1 20 -1 0
+ospdm11 00 20 -1 -1 20 -1 0
+ospdm12 00 20 -1 -1 20 -1 0
+pro-q3dm6 00 20 -1 -1 20 -1
+
+deletemap ospca1
+deletemap ospctf1
+deletemap ospctf2
+deletemap ospdm10
+deletemap ospdm3
+deletemap ospdm7
+deletemap ospdm8
+deletemap pro-q3dm13
+deletemap pro-q3tourney2
+deletemap pro-q3tourney4

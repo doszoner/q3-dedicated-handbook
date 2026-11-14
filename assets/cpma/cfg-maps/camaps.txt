@@ -1,0 +1,12 @@
+cpm4		0	12
+cpm6		0	12
+cpm18		4	16
+cpm21 99 99
+cpm27 99 99
+pro-q3dm6 99 99
+pro-q3dm13 99 99
+q3dm13 99 99
+bloodcovenant 99 99
+q3dm17 99 99
+ospdm5a 99 99
+overkill 99 99
